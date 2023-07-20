@@ -12,7 +12,7 @@ public class Exercise03 {
 
         try {
             File file = new File("log.txt");
-            FileWriter fileWriter = new FileWriter(file, );
+            FileWriter fileWriter = new FileWriter(file, false);
             String flagContinue = "yes";
 
             while (flagContinue.equals("yes")) {
