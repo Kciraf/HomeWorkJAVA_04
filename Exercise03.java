@@ -12,7 +12,7 @@ public class Exercise03 {
 
         try {
             File file = new File("log.txt");
-            FileWriter fileWriter = new FileWriter(file, true);
+            FileWriter fileWriter = new FileWriter(file, );
             String flagContinue = "yes";
 
             while (flagContinue.equals("yes")) {
@@ -52,9 +52,13 @@ public class Exercise03 {
             }
             System.out.println("Что делаем?\n Введите yes если продолжаем \n Введите del, если надо удалисть данные из истории и закончить \n Ведите что угодно другое для окончания ");
             flagContinue = (String) scanner.nextLine().toLowerCase();
-            if (flagContinue.equals("del")) calcHistory.removeLast();
-               
+            if (flagContinue.equals("del")) {
+                calcHistory.removeLast();
+                fileWriter.write("Выбрана операция удаления последнего действия из истории.");
+            }
+                      
         }
+            fileWriter.write("Останов вычислений.");
             fileWriter.flush(); 
             fileWriter.close();
             System.out.println(calcHistory);
